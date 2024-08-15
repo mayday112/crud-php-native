@@ -7,3 +7,4 @@ instalasi :
 4. import file .sql yang ada di dalam folder backup
 5. lalu buka alamat http://localhost/{sesuaikan dengan nama folder project kalian}
 
+![image](https://github.com/user-attachments/assets/87c18dcd-fb9b-4658-bd0c-d6ba403f778e)
