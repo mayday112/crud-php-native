@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 15, 2024 at 12:32 AM
+-- Generation Time: Aug 15, 2024 at 01:10 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.3.7
 
@@ -45,6 +45,19 @@ INSERT INTO `siswa` (`id_siswa`, `nisn`, `nama_lengkap`, `alamat`, `is_delete`) 
 (3, 22302025, 'Ahmad Fajar Ismail', 'Margasari', 0),
 (4, 22302012, 'Muhammad Kasyfuddin', 'Margasari', 0),
 (5, 22302011, 'Muhammad Bakhit', 'Margasari', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id_user` int NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Indexes for dumped tables
