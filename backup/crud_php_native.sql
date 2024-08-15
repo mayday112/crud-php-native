@@ -40,11 +40,11 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`id_siswa`, `nisn`, `nama_lengkap`, `alamat`, `is_delete`) VALUES
-(1, 22302015, 'Muhammad Humaidi', 'Longawang', 0),
-(2, 22302014, 'Muhammad Humaidi', 'Longawang', 0),
-(3, 22302025, 'Ahmad Fajar Ismail', 'Margasari', 0),
-(4, 22302012, 'Muhammad Kasyfuddin', 'Margasari', 0),
-(5, 22302011, 'Muhammad Bakhit', 'Margasari', 0);
+(1, 12345678, 'Muhammad Humaidi', 'Longawang', 0),
+(2, 23456789, 'Muhammad Humaidi', 'Longawang', 0),
+(3, 34567890, 'Ahmad Fajar Ismail', 'Margasari', 0),
+(4, 45678901, 'Muhammad Kasyfuddin', 'Margasari', 0),
+(5, 56789012, 'Muhammad Bakhit', 'Margasari', 0);
 
 -- --------------------------------------------------------
 
