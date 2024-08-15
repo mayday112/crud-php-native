@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 14, 2024 at 08:05 AM
+-- Generation Time: Aug 15, 2024 at 12:32 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.3.7
 
@@ -31,32 +31,20 @@ CREATE TABLE `siswa` (
   `id_siswa` int NOT NULL,
   `nisn` int NOT NULL,
   `nama_lengkap` varchar(255) NOT NULL,
-  `alamat` text NOT NULL
+  `alamat` text NOT NULL,
+  `is_delete` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `nisn`, `nama_lengkap`, `alamat`) VALUES
-(1, 22302015, 'Muhammad Humaidi', 'Longawang'),
-(2, 22302014, 'Muhammad Humaidi', 'Longawang'),
-(3, 22302025, 'Ahmad Fajar Ismail', 'Margasari'),
-(4, 22302012, 'Muhammad Kasyfuddin', 'Margasari'),
-(5, 22302011, 'Muhammad Bakhit', 'Margasari');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id_user` int NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO `siswa` (`id_siswa`, `nisn`, `nama_lengkap`, `alamat`, `is_delete`) VALUES
+(1, 22302015, 'Muhammad Humaidi', 'Longawang', 0),
+(2, 22302014, 'Muhammad Humaidi', 'Longawang', 0),
+(3, 22302025, 'Ahmad Fajar Ismail', 'Margasari', 0),
+(4, 22302012, 'Muhammad Kasyfuddin', 'Margasari', 0),
+(5, 22302011, 'Muhammad Bakhit', 'Margasari', 0);
 
 --
 -- Indexes for dumped tables
@@ -76,7 +64,7 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_siswa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

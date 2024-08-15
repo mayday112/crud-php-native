@@ -25,7 +25,7 @@ require('header.php');
                   <?php 
 
                       $no = 1;
-                      $query = mysqli_query($conn,"SELECT * FROM siswa");
+                      $query = mysqli_query($conn,"SELECT * FROM siswa WHERE is_delete = false");
                       while($row = mysqli_fetch_array($query)){
                   ?>
 
