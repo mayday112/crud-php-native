@@ -1,11 +1,18 @@
 <?php
+
 require('header.php');
+require('Siswa.php');
 
-$query = "SELECT * FROM siswa WHERE id_siswa ={$_GET['id']}";
+$sql = new Siswa();
+$siswa = $sql->show($_GET['id']);
 
-$result = $conn->query($query);
 
-$siswa = $result->fetch_assoc();
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $data = $_POST;
+    $sql->update($data['id_siswa'], $data);
+
+    header('location: index.php');
+}
 
 ?>
     <div class="container" style="margin-top: 80px">
@@ -16,7 +23,7 @@ $siswa = $result->fetch_assoc();
               TAMBAH SISWA
             </div>
             <div class="card-body">
-              <form action="simpan-edit-siswa.php" method="POST">
+              <form action="" method="POST">
                 
                 <input type="hidden" name="id_siswa" value="<?= $siswa['id_siswa'] ?>">
                 <div class="form-group mt-2">

@@ -1,5 +1,15 @@
 <?php
 require('header.php');
+
+include('Siswa.php');
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $data = $_POST;
+    $sql = new Siswa();
+    $sql->store($data);
+
+    header('location: index.php');
+}
 ?>
     <div class="container" style="margin-top: 80px">
       <div class="row">
@@ -9,7 +19,7 @@ require('header.php');
               TAMBAH SISWA
             </div>
             <div class="card-body">
-              <form action="simpan-siswa.php" method="POST">
+              <form action="" method="POST">
                 
                 <div class="form-group mt-2">
                   <label>NISN</label>

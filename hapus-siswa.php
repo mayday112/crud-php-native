@@ -1,10 +1,9 @@
 <?php
 
-require_once('koneksi.php');
+require_once('Siswa.php');
 
 $id = $_GET['id'];
-$query = "UPDATE siswa SET is_delete = true WHERE id_siswa={$id}";
-
-mysqli_query($conn, $query);
+$data = new Siswa();
+$data->destroy($id);
 
 header('location: index.php');
