@@ -1,7 +1,10 @@
 <?php
-require('Layout.php');
 
- 
-echo Layout::index();
+require_once('init.php');
+use app\App;
+
+$run = new App();
+$run->run();
+
 
 ?>
