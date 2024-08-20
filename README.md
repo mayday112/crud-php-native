@@ -66,7 +66,17 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 =======
+##Instalasi
+- clone repository ini
+- bukan terminal, eksekusi perintah 'composer install'
+- lalu jalankan 'cp .env.example .env'
+- - atur konfigurasi pada file .env
+- Setiap kali melakukan perubahan pada file .env, Anda dianjurkan untuk menjalankan perintah :
 
+'php artisan config:cache'
 
+- jalankan perintah 'php artisan key:generate'
+- jalankan perintah 'php artisan migrate'
 ![image](https://github.com/user-attachments/assets/87c18dcd-fb9b-4658-bd0c-d6ba403f778e)
+
 >>>>>>> d35f74dc792c161d2e073e45eb59a039529195cc
