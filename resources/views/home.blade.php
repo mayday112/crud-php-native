@@ -21,28 +21,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @forelse ($students as $student)
-                        <tr>
-                            <td>{{ $no++ }}</td>
-                            <td>{{ $student['nisn'] }}</td>
-                            <td>{{ $student['nama_lengkap'] }}</td>
-                            <td>{{ $student['alamat'] }}</td>
-                            <td class="text-center">
-                                <form action="{{ route('student.destroy', $student['id']) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                  <a href="{{ route('student.edit', $student['id']) }}" class="btn btn-sm btn-primary">EDIT</a>
-                                  <button type="submit" class="btn btn-sm btn-danger" onclick=" return confirm('Apakah anda Yakin?')">HAPUS</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td>
-                                Data Kosong
-                            </td>
-                        </tr>
-                    @endforelse
+
                   </tbody>
                 </table>
               </div>
@@ -53,7 +32,21 @@
       <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
       <script>
         $(document).ready( function () {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable({
+                processing: true,
+                serverSide: true,
+                stateSave: true,
+                ajax: {
+                  url: '{{ route("student.index") }}',
+                },
+                columns : [
+                    {data : 'id', name : 'id'},
+                    {data : 'nisn', name : 'nisn'},
+                    {data : 'nama_lengkap', name : 'nama_lengkap'},
+                    {data : 'alamat', name : 'alamat'},
+                    {data : 'action', name : 'action', orderable: false, searchable: false,},
+                ],
+            });
         } );
   </script>
 

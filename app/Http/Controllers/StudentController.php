@@ -4,10 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class StudentController extends Controller
 {
     public function index(){
+        if(request()->ajax()){
+            $data = Student::query();
+
+            return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('action', function($row){
+                return '<form action="' . route('student.destroy', $row['id']) .'" method="POST">
+                                    '. csrf_field() .'
+                                    '. method_field('delete') .'
+                                  <a href="'. route('student.edit', $row['id']) .'" class="btn btn-sm btn-primary">EDIT</a>
+                                  <button type="submit" class="btn btn-sm btn-danger" onclick=" return confirm(\'Apakah anda Yakin?\')">HAPUS</button>
+                                </form>';
+            })
+            ->rawColumns(['action'])
+            ->make();
+        }
         $students = Student::latest()->get();
 
         return view('home', ['title' => 'Siswa' ,'students' => $students, 'no' => 1]);
